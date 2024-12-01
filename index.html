@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="DUCKY-H4CK: A platform for hacking cheat sheets, payloads, CTF help, and hacking commands with a filter option to search and sort content efficiently. Learn with Aathil Ducky's Hacking Cheatsheets."
+    />
+    <meta
+      name="keywords"
+      content="payload of things with filter option, aathil ducky, ducky hacks, hacking cheat sheet, hacking commands, injection payloads, CTF helping cheat sheet, search, sortlist content"
+    />
+    <meta name="author" content="Aathil Ducky" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="DUCKY-H4CK - Hacking Cheat Sheets and Payloads"
+    />
+    <meta
+      property="og:description"
+      content="Explore Aathil Ducky's collection of hacking commands, payloads, CTF cheat sheets, and more with efficient search and filtering options."
+    />
+    <meta property="og:image" content="path_to_image.jpg" />
+    <!-- Add an image path for the social media thumbnail -->
+    <meta property="og:url" content="https://www.duckyh4ck.com/" />
+    <!-- Replace with your URL -->
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="DUCKY-H4CK - Hacking Cheat Sheets and Payloads"
+    />
+    <meta
+      name="twitter:description"
+      content="Learn hacking commands, payloads, and CTF cheat sheets with filtering options. Access Aathil Ducky's hacking resources."
+    />
+    <meta name="twitter:image" content="path_to_image.jpg" />
+    <!-- Add an image path for the Twitter thumbnail -->
+
+    <!-- Title for the Page -->
+    <title>DUCKY-H4CK - Hacking Cheat Sheets and Payloads</title>
+
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .jetbrains {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* Fixed search bar */
+      #contentSearch {
+        position: sticky;
+        top: 0;
+        z-index: 10; /* Ensure it's on top */
+      }
+
+      /* Custom styles for SEO */
+      h1,
+      h2 {
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white h-screen overflow-hidden jetbrains">
+    <!-- Main Container -->
+    <div class="flex h-full">
+      <!-- Sidebar -->
+      <div class="w-1/4 bg-gray-800 p-4 overflow-y-auto">
+        <h1 class="p-2 pb-5 text-3xl text-[#94f725] font-bold">DUCKY-H4CKS</h1>
+        <input
+          id="sidebarSearch"
+          type="text"
+          placeholder="Search..."
+          class="w-full p-2 mb-4 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-teal-500 hidden"
+        />
+        <ul id="sidebarList" class="space-y-2"></ul>
+      </div>
+
+      <!-- Content Area -->
+      <div class="w-3/4 p-4 overflow-y-auto">
+        <!-- Fixed Search Bar -->
+        <input
+          id="contentSearch"
+          type="text"
+          placeholder="Search comma separated multiple keywords..."
+          class="w-full p-2 mb-4 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-teal-500"
+        />
+        <div id="contentArea" class="space-y-4"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

