@@ -317,5 +317,93 @@
       "hash types"
     ],
     "category": "commands"
+  },
+  {
+    "id": 27,
+    "title": "hydra commands for brute-force",
+    "content": "ssh brute-force<br>\n<copycode>\nhydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://10.10.10.10\n</copycode><br>\nHTTP POST form brute force<br>\n<copycode>\nhydra -l admin -P /usr/share/wordlists/rockyou.txt -s 80 -t 4 10.10.10.10 http-post-form \"/login:username=^USER^&password=^PASS^:Invalid login\"\n</copycode>\n<br>\nFTP brute-force<br>\n<copycode>\nhydra -l admin -P /usr/share/wordlists/rockyou.txt ftp://10.10.10.10\n</copycode>",
+    "keywords": [
+      "hydra",
+      "commands",
+      "bruteforce",
+      "login",
+      "form"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 28,
+    "title": "SSH Password Brute Force with Nmap",
+    "content": "<copycode>\nnmap --script ssh-brute -p 22 <target-IP>\n</copycode>",
+    "keywords": [
+      "nmap",
+      "ssh",
+      "bruteforce",
+      "script"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 29,
+    "title": "FTP Password Brute Force with Nmap",
+    "content": "<copycode>\nnmap --script ftp-brute -p 21 <target-IP>\n</copycode>",
+    "keywords": [
+      "nmap",
+      "password",
+      "bruteforce",
+      "ftp",
+      "script"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 30,
+    "title": "finding file type",
+    "content": "<copycode>\nfile  file_name\n</copycode>",
+    "keywords": [
+      "find",
+      "file",
+      "types"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 31,
+    "title": "decode base64 ",
+    "content": "<copycode>\necho 'base64_value' | base64 -d<br>\nor<br>\ncat  bash64.txt | base64 -d\n</copycode>",
+    "keywords": [
+      "decode",
+      "base64",
+      "to text"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 32,
+    "title": "sort and uniq (avoid deduplicate data)",
+    "content": "<copycode>\ncat file.txt | sort | uniq<br>\ncat file.hd | xargs -n1 | sort | uniq -c\n</copycode>",
+    "keywords": [
+      "deduplicate",
+      "data",
+      "uniq",
+      "sort",
+      "filter",
+      "xargs"
+    ],
+    "category": "commands"
+  },
+  {
+    "id": 33,
+    "title": "SMB commands",
+    "content": "See what shares are on the host<br>\n<copycode>smbclient -L $IP<br>\nsmbmap -H $IP<br>\nnmap --script smb-enum-shares -p139 $IP</copycode><br>\nConnect<br>\n<copycode>smbclient //$IP/<sharename><br>\nsmbclient //$IP/<sharename> -U <username> <password></copycode><br>\nMount<br>\n<copycode>mount.cifs //$IP/<sharename>/  /mnt/shares/<sharename> -o username=<user>,pass=<password></copycode><br>\nUpload<br>\n<copycode>curl --upload-file <file> -u '<user>' smb://$IP/<sharename>/</copycode><br>\nBrute<br>\n<copycode>hydra -L usernames.txt -P /usr/share/wordlists/rockyou.txt $IP smb</copycode>",
+    "keywords": [
+      "smp",
+      "commands",
+      "upload",
+      "connect",
+      "brute",
+      "shares"
+    ],
+    "category": "commands"
   }
 ]
