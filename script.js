@@ -65,7 +65,17 @@ function initApp(notes) {
     });
   };
 
-  // Parse Content to Handle <copycode>, <insert>, and <srclink> Tags (Without Encoding)
+  // Escape HTML for Safe Display
+  const escapeHTML = (str) =>
+    str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;")
+      .replace(/\n/g, "<br>"); // Support new lines
+
+  // Parse Content to Handle <copycode>, <insert>, and <srclink> Tags (Escaped)
   const parseCopyCode = (content) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(content, "text/html");
@@ -76,8 +86,8 @@ function initApp(notes) {
       codeContainer.className =
         "bg-gray-900 text-[#94f725] rounded p-2 mt-2 flex justify-between items-center";
 
-      // Directly set the HTML content without encoding
-      const codeContent = tag.innerHTML; // Use innerHTML here to avoid encoding
+      // Escape content for safe display
+      const codeContent = escapeHTML(tag.innerHTML);
 
       codeContainer.innerHTML = `
         <code class="font-mono text-sm">${codeContent}</code>
@@ -89,8 +99,8 @@ function initApp(notes) {
 
       // Add Copy Functionality
       codeContainer.querySelector(".copy-btn").addEventListener("click", () => {
-        // Copy the content of the <copycode> tag to the clipboard
-        navigator.clipboard.writeText(codeContent);
+        // Copy the original content of the <copycode> tag to the clipboard
+        navigator.clipboard.writeText(tag.innerHTML.trim());
         alert("Code copied to clipboard!");
       });
     });
@@ -104,7 +114,9 @@ function initApp(notes) {
         .then((response) => response.text())
         .then((fileContent) => {
           tag.replaceWith(
-            `<pre class="bg-gray-900 text-white p-2 rounded">${fileContent}</pre>`
+            `<pre class="bg-gray-900 text-white p-2 rounded">${escapeHTML(
+              fileContent
+            )}</pre>`
           );
         })
         .catch((err) => {

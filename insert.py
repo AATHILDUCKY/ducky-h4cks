@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QFont, QColor, QPalette
 from PyQt5.QtCore import Qt
+import html
 
 class NoteUploader(QWidget):
     def __init__(self):
@@ -119,19 +120,22 @@ class NoteUploader(QWidget):
     def insert_note(self):
         try:
             # Read the existing JSON file
-            with open("notes.json", "r") as file:
-                notes = json.load(file)
-            
+            try:
+                with open("notes.json", "r") as file:
+                    notes = json.load(file)
+            except FileNotFoundError:
+                notes = []
+
             # Create a new note
             new_id = notes[-1]["id"] + 1 if notes else 1
             new_note = {
                 "id": new_id,
                 "title": self.title_input.text(),
-                "content": self.content_input.toPlainText(),
+                "content": html.escape(self.content_input.toPlainText()),  # Escape for HTML compatibility
                 "keywords": [kw.strip() for kw in self.keywords_input.text().split(",")],
                 "category": self.category_input.text(),
             }
-            
+
             # Append the new note to the list
             notes.append(new_note)
 
